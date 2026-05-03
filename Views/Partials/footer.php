@@ -1,14 +1,14 @@
-<footer class="site-footer">
-    <div class="container mx-auto max-w-6xl px-4">
-        <div class="footer-grid">
-            <div>
-                <h3>Prosple</h3>
-                <p>
+<footer class="site-footer-retool">
+    <div class="footer-retool-container">
+        <div class="footer-retool-top">
+            <div class="footer-retool-col">
+                <h4>About</h4>
+                <p class="footer-about-text">
                     A simple platform for students and professionals to explore job opportunities.
                 </p>
             </div>
-
-            <div>
+            
+            <div class="footer-retool-col">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="/WS03/Public/">Home</a></li>
@@ -17,21 +17,31 @@
                 </ul>
             </div>
 
-            <div>
+            <div class="footer-retool-col">
                 <h4>Contact</h4>
                 <ul>
-                    <li><i class="fa fa-envelope"></i> support@prosple.com</li>
-                    <li><i class="fa fa-phone"></i> +63 912 345 6789</li>
-                    <li><i class="fa fa-location-dot"></i> Manila, Philippines</li>
+                    <li><a href="mailto:support@prosple.com">support@prosple.com</a></li>
+                    <li><a href="tel:+639123456789">+63 912 345 6789</a></li>
+                    <li><span>Manila, Philippines</span></li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; <?= date('Y') ?> Prosple. All rights reserved.</p>
+        
+        <div class="footer-retool-bottom">
+            <div class="footer-massive-brand-wrapper">
+                <h1 class="footer-retool-brand">Prosple</h1>
+            </div>
+            
+            <div class="footer-retool-legal">
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+                <div class="footer-copyright">&copy; PROSPLE <?= date('Y') ?></div>
+            </div>
         </div>
     </div>
 </footer>
 </body>
-
 </html>

@@ -1,47 +1,55 @@
-<section class="hero-section">
-    <div class="overlay"></div>
+<div class="hero-box-wrapper">
+    <section class="hero-section hero-box">
+        <!-- Background glow blobs -->
+        <div class="hero-glow hero-glow--1"></div>
+        <div class="hero-glow hero-glow--2"></div>
+        <div class="hero-overlay"></div>
 
-    <div class="container mx-auto hero-content">
-        <div class="hero-badge">
-            <i class="fa fa-briefcase"></i>
-            Career Portal
+        <div class="container mx-auto max-w-6xl px-4 hero-grid">
+            <!-- LEFT COLUMN — Text & CTAs -->
+            <div class="hero-left">
+                <h2 class="hero-headline">
+                    <span class="d-block">Find.</span>
+                    <span class="d-block">Match.</span>
+                    <span class="d-block">Succeed.</span>
+                </h2>
+
+                <p class="hero-subtext">
+                    Browse opportunities from different companies and take the next step in your career journey today.
+                </p>
+
+                <form method="GET" action="/WS03/Public/listings" class="hero-search-form">
+                    <div class="search-input-group">
+                        <i class="fa fa-search search-icon"></i>
+                        <input type="text" name="keywords" placeholder="Job title or keyword" class="search-input">
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-input-group">
+                        <i class="fa fa-map-marker-alt search-icon"></i>
+                        <input type="text" name="location" placeholder="Location" class="search-input">
+                    </div>
+                    <button type="submit" class="search-btn">
+                        Search
+                    </button>
+                </form>
+
+                <div class="hero-cta-row">
+                    <a href="/WS03/Public/listings" class="btn hero-btn-white">
+                        Explore Jobs
+                    </a>
+                    <a href="/WS03/Public/listings/create" class="btn hero-btn-icon-text">
+                        <span class="icon-circle"><i class="fa fa-asterisk"></i></span>
+                        Post a Job
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN — 3D Asset -->
+            <div class="hero-right">
+                <div class="hero-3d-wrapper">
+                    <img src="/WS03/Public/hero/hero_job_icon.png" alt="3D Glass Job Icon" class="hero-3d-image">
+                </div>
+            </div>
         </div>
-
-        <h2>Find a Job That Matches Your Skills</h2>
-        <p>
-            Browse opportunities from different companies and take the next step in your career journey.
-        </p>
-
-        <form class="hero-search-form">
-            <div class="input-group">
-                <i class="fa fa-search"></i>
-                <input type="text" name="keywords" placeholder="Job title or keyword" />
-            </div>
-
-            <div class="input-group">
-                <i class="fa fa-location-dot"></i>
-                <input type="text" name="location" placeholder="Location" />
-            </div>
-
-            <button class="btn btn-primary search-btn">
-                <i class="fa fa-search"></i>
-                Search Jobs
-            </button>
-        </form>
-
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <strong>300+</strong>
-                <span>Open Jobs</span>
-            </div>
-            <div class="hero-stat">
-                <strong>80+</strong>
-                <span>Employers</span>
-            </div>
-            <div class="hero-stat">
-                <strong>5k+</strong>
-                <span>Applicants</span>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
