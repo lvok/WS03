@@ -1,9 +1,15 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
 require '../helpers.php';
 
-require basePath('Router.php');
-require basePath('Database.php');
+use Framework\Database;
+use Framework\Router;
+
+
 
 $config = require basePath('Config/db.php');
 
@@ -23,8 +29,8 @@ if ($basePath !== '/' && str_starts_with($uri, $basePath)) {
 
 $uri = $uri === '' ? '/' : $uri;
 
-$method = $_SERVER['REQUEST_METHOD'];
 
-$router->route($uri, $method);
+
+$router->route($uri);
 
 

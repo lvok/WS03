@@ -1,0 +1,17 @@
+{
+    "name": "admiral/ws03",
+    "description": "PHP learning project",
+    "authors": [
+        {
+            "name": "Mackie Vero",
+            "email": "mackiever397@gmail.com",
+            "role": "Developer"
+        }
+    ],
+   "autoload": {
+    "psr-4": {
+        "Framework\\": "Framework/",
+        "App\\": "App/"
+    }
+   }
+}
