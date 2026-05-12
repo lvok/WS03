@@ -21,7 +21,10 @@ class Database
         try {
             $this->conn = new PDO($dsn, $config['username'], $config['password'], $options);
 
-            
+            // if (!self::$messagePrinted) {
+            //     echo "Connected to database successfully.";
+            //     self::$messagePrinted = true;
+            // }
         } catch (\PDOException $e) {
             throw new \Exception("Database connection failed: " . $e->getMessage());
         }
