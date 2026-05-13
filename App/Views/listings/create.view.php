@@ -1,142 +1,126 @@
 <?php loadPartial('head'); ?>
 <?php loadPartial('navbar'); ?>
 
-<section class="create-page">
-    <!-- Animated background elements -->
-    <div class="job-backdrop-glow glow-purple" style="top: -10%; left: -10%;"></div>
-    <div class="job-backdrop-glow glow-blue" style="bottom: -10%; right: -10%;"></div>
-    
-    <div class="container mx-auto max-w-4xl px-4 relative z-10 py-12">
-        <div class="form-shell-glass">
-            <div class="form-hero-glass">
-                <div class="form-hero-content">
-                    <span class="form-badge-glass">EMPLOYER PORTAL</span>
-                    <h1 class="form-title-main">Post a New Listing</h1>
-                    <p class="form-subtitle">Connect with top-tier talent in the tech industry. Fill in the details below to reach thousands of candidates.</p>
+<section class="studio-page">
+    <div class="studio-container">
+        <!-- Left Side: Massive Title & Meta -->
+        <div class="studio-side">
+            <h1 class="studio-title">Post a<br>Listing</h1>
+            
+            <div class="studio-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-value">Global Talent Network</span>
                 </div>
-                <div class="form-hero-icon">
-                    <i class="fa fa-briefcase"></i>
+                <div class="meta-item">
+                    <span class="meta-label">Established</span>
+                    <span class="meta-value">2026 Edition</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Support</span>
+                    <span class="meta-value">hr@prosple.com</span>
                 </div>
             </div>
+        </div>
 
-            <form method="POST" class="job-form-modern">
-                <!-- Section: Job Details -->
-                <div class="form-section-modern">
-                    <div class="section-header-modern">
-                        <i class="fa fa-clipboard-list"></i>
-                        <h3>Job Information</h3>
-                    </div>
+        <!-- Right Side: The Form -->
+        <div class="studio-main">
+            <form method="POST" class="studio-form">
+                <!-- Section: Job Information -->
+                <div class="studio-section">
+                    <span class="studio-section-label">01. Job Information</span>
                     
-                    <div class="form-grid-modern">
-                        <div class="form-group-modern full">
-                            <label for="title">Job Title</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-heading"></i>
-                                <input type="text" id="title" name="title" placeholder="e.g. Senior Frontend Engineer" required />
-                            </div>
+                    <div class="studio-grid">
+                        <div class="studio-group full">
+                            <label class="studio-label" for="title">
+                                <i class="fa fa-heading"></i> Job Title (required)
+                            </label>
+                            <input type="text" id="title" name="title" class="studio-input" placeholder="e.g. Lead Product Designer" required />
                         </div>
 
-                        <div class="form-group-modern full">
-                            <label for="description">Job Description</label>
-                            <div class="input-wrap-modern align-top">
-                                <i class="fa fa-align-left"></i>
-                                <textarea id="description" name="description" rows="6" placeholder="Describe the role, responsibilities, and team culture..." required></textarea>
-                            </div>
+                        <div class="studio-group full">
+                            <label class="studio-label" for="description">
+                                <i class="fa fa-align-left"></i> Job Description (required)
+                            </label>
+                            <textarea id="description" name="description" class="studio-input studio-textarea" placeholder="Describe the role and responsibilities..." required></textarea>
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="salary">Annual Salary</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-money-bill-wave"></i>
-                                <input type="text" id="salary" name="salary" placeholder="e.g. ₱500,000" />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="salary">
+                                <i class="fa fa-money-bill-wave"></i> Annual Salary
+                            </label>
+                            <input type="text" id="salary" name="salary" class="studio-input" placeholder="e.g. $120k - $150k" />
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="requirements">Requirements</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-list-check"></i>
-                                <input type="text" id="requirements" name="requirements" placeholder="React, PHP, AWS" />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="requirements">
+                                <i class="fa fa-list-check"></i> Requirements
+                            </label>
+                            <input type="text" id="requirements" name="requirements" class="studio-input" placeholder="Skill tags (comma separated)" />
                         </div>
 
-                        <div class="form-group-modern full">
-                            <label for="benefits">Benefits</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-gift"></i>
-                                <input type="text" id="benefits" name="benefits" placeholder="Remote, Health Insurance, 401k" />
-                            </div>
+                        <div class="studio-group full">
+                            <label class="studio-label" for="benefits">
+                                <i class="fa fa-gift"></i> Benefits
+                            </label>
+                            <input type="text" id="benefits" name="benefits" class="studio-input" placeholder="Remote, Health, Equity" />
                         </div>
                     </div>
                 </div>
 
                 <!-- Section: Company Details -->
-                <div class="form-section-modern">
-                    <div class="section-header-modern">
-                        <i class="fa fa-building"></i>
-                        <h3>Company & Location</h3>
-                    </div>
-
-                    <div class="form-grid-modern">
-                        <div class="form-group-modern full">
-                            <label for="company">Company Name</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-industry"></i>
-                                <input type="text" id="company" name="company" placeholder="e.g. Prosple Inc." required />
-                            </div>
+                <div class="studio-section">
+                    <span class="studio-section-label">02. Company & Location</span>
+                    
+                    <div class="studio-grid">
+                        <div class="studio-group full">
+                            <label class="studio-label" for="company">
+                                <i class="fa fa-industry"></i> Company Name (required)
+                            </label>
+                            <input type="text" id="company" name="company" class="studio-input" placeholder="e.g. Acme Corp" required />
                         </div>
 
-                        <div class="form-group-modern full">
-                            <label for="address">Full Address</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-location-dot"></i>
-                                <input type="text" id="address" name="address" placeholder="123 Business Avenue, Suite 100" />
-                            </div>
+                        <div class="studio-group full">
+                            <label class="studio-label" for="address">
+                                <i class="fa fa-location-dot"></i> Full Address
+                            </label>
+                            <input type="text" id="address" name="address" class="studio-input" placeholder="Street, Building, Floor" />
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="city">City</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-city"></i>
-                                <input type="text" id="city" name="city" placeholder="Manila" />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="city">
+                                <i class="fa fa-city"></i> City
+                            </label>
+                            <input type="text" id="city" name="city" class="studio-input" placeholder="New York" />
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="state">State / Province</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-map"></i>
-                                <input type="text" id="state" name="state" placeholder="Metro Manila" />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="state">
+                                <i class="fa fa-map"></i> State / Province
+                            </label>
+                            <input type="text" id="state" name="state" class="studio-input" placeholder="NY" />
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="phone">Contact Phone</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-phone"></i>
-                                <input type="text" id="phone" name="phone" placeholder="+63 912 345 6789" />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="phone">
+                                <i class="fa fa-phone"></i> Contact Phone
+                            </label>
+                            <input type="text" id="phone" name="phone" class="studio-input" placeholder="+1 (555) 000-0000" />
                         </div>
 
-                        <div class="form-group-modern">
-                            <label for="email">Application Email</label>
-                            <div class="input-wrap-modern">
-                                <i class="fa fa-envelope"></i>
-                                <input type="email" id="email" name="email" placeholder="hr@company.com" required />
-                            </div>
+                        <div class="studio-group">
+                            <label class="studio-label" for="email">
+                                <i class="fa fa-envelope"></i> Application Email (required)
+                            </label>
+                            <input type="email" id="email" name="email" class="studio-input" placeholder="hiring@company.com" required />
                         </div>
                     </div>
                 </div>
 
-                <div class="form-actions-modern">
-                    <button type="submit" class="btn-modern btn-submit-modern">
-                        <i class="fa fa-paper-plane"></i>
-                        <span>Publish Listing</span>
-                    </button>
-                    <a href="/WS03/Public/listings" class="btn-modern btn-cancel-modern">
-                        <i class="fa fa-xmark"></i>
-                        <span>Cancel</span>
-                    </a>
+                <!-- Actions -->
+                <div class="studio-actions">
+                    <button type="submit" class="studio-btn-pill">Publish Listing</button>
+                    <a href="/WS03/Public/listings" class="studio-btn-cancel">Cancel</a>
                 </div>
             </form>
         </div>
