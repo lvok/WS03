@@ -1,6 +1,6 @@
 <footer class="site-footer-retool">
     <div class="footer-retool-container">
-        <div class="footer-retool-top">
+        <div class="footer-retool-top" data-scroll>
             <div class="footer-retool-col">
                 <h4>About</h4>
                 <p class="footer-about-text">
@@ -43,5 +43,26 @@
         </div>
     </div>
 </footer>
+
+<!-- Scroll Reveal -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollElements = document.querySelectorAll('[data-scroll]');
+    if (!scrollElements.length) return;
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollElements.forEach(function (el) {
+        observer.observe(el);
+    });
+});
+</script>
 </body>
 </html>

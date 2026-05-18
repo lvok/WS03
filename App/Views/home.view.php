@@ -28,7 +28,7 @@
 <section class="jobs-section">
 
     <div class="container mx-auto max-w-6xl px-4 relative z-10">
-        <div class="jobs-section-header">
+        <div class="jobs-section-header" data-scroll>
             <span class="jobs-section-badge-glass">LATEST JOBS</span>
             <div class="jobs-title-container">
                 <h2 class="jobs-background-title">Recent Listings</h2>
@@ -37,10 +37,10 @@
     
         <div class="jobs-grid">
 <?php foreach($listings as $listing) : ?>
-            <article class="job-card" style="animation-delay: 0.05s;">
+            <article class="job-card" data-scroll style="animation-delay: 0.05s;">
                 <div class="job-card-content">
                     <div class="job-card-top">
-                        <span class="job-card-category"><?= $listing->title ?></span>
+                        <span class="job-card-category"><?= $listing->company ?></span>
                         <span class="job-badge badge-local">Local</span>
                     </div>
                     <h3 class="job-card-title"><?=$listing->title ?></h3>
@@ -71,7 +71,7 @@
 <?php endforeach; ?>
         </div>
 
-        <div class="jobs-footer-link-wrap">
+        <div class="jobs-footer-link-wrap" data-scroll>
             <a href="/WS03/Public/listings" class="jobs-footer-link">
                 <span>Show All Jobs</span>
                 <i class="fa fa-arrow-right"></i>

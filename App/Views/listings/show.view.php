@@ -10,6 +10,7 @@
 
         <!-- Back Navigation -->
         <div class="listing-back-wrap">
+            <?php loadPartial('message'); ?>
             <a href="/WS03/Public/listings" class="listing-back-link">
                 <i class="fa fa-arrow-left"></i>
                 <span>Back To Listings</span>
@@ -22,7 +23,7 @@
                 <!-- Header Card -->
                 <div class="listing-header-card">
                     <div class="listing-header-top">
-                        <span class="job-card-category"><?= $listing->title ?></span>
+                        <span class="job-card-category"><?= $listing->company ?></span>
                         <span class="job-badge badge-local">Local</span>
                     </div>
                     <h1 class="listing-detail-title"><?= $listing->title ?></h1>
@@ -37,7 +38,7 @@
                         <div class="listing-meta-item">
                             <span class="job-meta-label">Location</span>
                             <span class="job-location"><?= $listing->city ?>, <?= $listing->state ?></span>
-                        </div>
+                        </div>  
                         <?php if (!empty($listing->tags)): ?>
                         <div class="listing-meta-divider"></div>
                         <div class="listing-meta-item listing-meta-tags">
@@ -99,6 +100,7 @@
                         Edit Listing
                     </a>
                     <form method="POST" class="listing-action-form">
+                        <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="listing-action-btn listing-action-delete">
                             <i class="fa fa-trash"></i>
                             Delete Listing

@@ -2,12 +2,13 @@
 
 namespace Framework;
 use App\Controllers\ErrorController;
+use Framework\Middleware\Authorize;
 
 class Router
 {
     protected $routes = [];
 
-    public function registerRoutes($method, $uri, $action)
+    public function registerRoutes($method, $uri, $action, $middleware = [])
     {
        list ($controller, $controllerMethod) = explode('@', $action);
 
@@ -16,7 +17,8 @@ class Router
             'method' => $method,
             'uri' => $uri,
             'controller' => $controller,
-            'controllerMethod' => $controllerMethod
+            'controllerMethod' => $controllerMethod,
+            'middleware' => $middleware
         ];
     }
 
@@ -27,9 +29,9 @@ Add GET route
 @param string $controller
 @return void */
 
-    public function get($uri, $controller)
+    public function get($uri, $controller, $middleware = [])
     {
-        $this->registerRoutes('GET', $uri, $controller);
+        $this->registerRoutes('GET', $uri, $controller, $middleware );
     }
 
 /**   
@@ -39,9 +41,9 @@ Add GET route
 *@return void
 */
 
-    public function post($uri, $controller)
+    public function post($uri, $controller, $middleware = [])
     {
-        $this->registerRoutes('POST', $uri, $controller);
+        $this->registerRoutes('POST', $uri, $controller, $middleware);
     }
 
 /** 
@@ -51,9 +53,9 @@ Add GET route
 *@return void
 */
 
-    public function put($uri, $controller)
+    public function put($uri, $controller, $middleware = [])
     {
-        $this->registerRoutes('PUT', $uri, $controller);
+        $this->registerRoutes('PUT', $uri, $controller, $middleware);
     }
 
 
@@ -65,9 +67,9 @@ Add GET route
 *@return void
 */
 
-    public function delete($uri, $controller)
+    public function delete($uri, $controller, $middleware = [])
     {
-        $this->registerRoutes('DELETE', $uri, $controller);
+        $this->registerRoutes('DELETE', $uri, $controller, $middleware);
     }
 
 
@@ -82,6 +84,10 @@ Add GET route
     public function route($uri)
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+        if($requestMethod === 'POST' && isset($_POST['_method'])) {
+            $requestMethod = strtoupper($_POST['_method']);
+        }
         
         foreach ($this->routes as $route) {
 
@@ -104,6 +110,10 @@ Add GET route
                    }   
                }
                if($match){
+
+                foreach($route['middleware'] as $middleware) {
+                  (new Authorize())->handle($middleware); 
+                }
 
                 $controller = 'App\\Controllers\\' . $route['controller'];
                 $controllerMethod = $route['controllerMethod']; 
