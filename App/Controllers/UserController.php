@@ -12,7 +12,7 @@ class UserController
 
     public function __construct()
     {
-        $config = require basePath('config/db.php');
+        $config = require basePath('Config/db.php');
         $this->db = new Database($config);
     }
 
@@ -172,7 +172,7 @@ class UserController
      */
     public function logout()
     {
-        Session::clearAll('user');
+        Session::clearAll();
 
         $params = session_get_cookie_params();
         setcookie('PHPSESSID', '', time() - 86400, $params['path'], $params['domain']);

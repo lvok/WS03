@@ -18,7 +18,7 @@ public function isAuthenticated()
     public function handle($role)
     {
         if($role === 'guest' && $this->isAuthenticated()) {
-            redirect('/');
+            redirect('/WS03/Public/');
         }elseif($role === 'auth' && !$this->isAuthenticated()) {
             redirect('/WS03/Public/auth/login');
         }
